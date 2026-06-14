@@ -85,8 +85,11 @@ async function processRegistration() {
         if(respone.status === 201)
         {
             alert("Succesfully registered");
-            
         }
+    }
+    catch (error)
+    {
+        
     }
     // await fetch(...)
 }

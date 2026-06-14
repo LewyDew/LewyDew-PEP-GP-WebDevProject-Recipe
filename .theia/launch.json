@@ -3,13 +3,13 @@
   // Hover to view descriptions of existing attributes.
   "version": "0.2.0",
   "configurations": [{
-    "type": "java",
+/*    "type": "java",
     "name": "Spring boot - Laucnh Application",
     "request": "launch",
-    "mainClass": "launch",
+    "mainClass": "Main.java",
     "projectName": "LEWYDEW-PEP-WEBDEVPROJECT-RECIPE",
     "env": {
       "Spring_PROFILES_ACTIVE": "dev"
-    }
+    }*/
   }]
 }
