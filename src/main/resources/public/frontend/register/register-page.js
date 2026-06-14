@@ -81,15 +81,25 @@ async function processRegistration() {
 
     try
     {
-        const respone = await fetch('frontend/register',requestOptions);
+        const respone = await fetch('/register',requestOptions);
         if(respone.status === 201)
         {
             alert("Succesfully registered");
+            
+        }
+        else if(respone.status === 409)
+        {
+            alert("Username or Email is already registered");
+        }
+        else
+        {
+            alert("Registration Failed.");
         }
     }
     catch (error)
     {
-        
+        console.error("Error during registration");
+        alert("An error occurred. Please veify connection and input fields");
     }
     // await fetch(...)
 }
