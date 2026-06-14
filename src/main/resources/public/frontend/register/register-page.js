@@ -85,11 +85,11 @@ async function processRegistration() {
         if(respone.status === 201)
         {
             alert("Succesfully registered");
-            
+            window.location.href = "/recipe"
         }
         else if(respone.status === 409)
         {
-            alert("Username or Email is already registered");
+            alert("Username or Email already exists");
         }
         else
         {
