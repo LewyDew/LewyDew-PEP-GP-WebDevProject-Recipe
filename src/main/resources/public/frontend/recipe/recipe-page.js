@@ -36,11 +36,19 @@ window.addEventListener("DOMContentLoaded", () => {
     /*
      * TODO: Show logout button if auth-token exists in sessionStorage
      */
+    const token = sessionStorage.getItem("auth-token");
+    if (token && logoutButton) {
+        logoutButton.style.display = "block";
+    }
 
     /*
      * TODO: Show admin link if is-admin flag in sessionStorage is "true"
      */
-
+    const isAdmin = sessionStorage.getItem("is-admin");
+    if(adminLink && isAdmin === "true")
+    {
+        adminLink.style.display = "inline-block";
+    }
     /*
      * TODO: Attach event handlers
      * - Add recipe button → addRecipe()
@@ -49,11 +57,15 @@ window.addEventListener("DOMContentLoaded", () => {
      * - Search button → searchRecipes()
      * - Logout button → processLogout()
      */
-
+    if (addRecipeSubmitButton) addRecipeSubmitButton.addEventListener("click", addRecipe);
+    if (updateRecipeButton) updateRecipeButton.addEventListener("click", updateRecipe);
+    if (deleteRecipeNameButton) deleteRecipeNameButton.addEventListener("click", deleteRecipe);
+    if (searchButton) searchButton.addEventListener("click", searchRecipes);
+    if (logoutButton) logoutButton.addEventListener("click", processLogout);
     /*
      * TODO: On page load, call getRecipes() to populate the list
      */
-
+    getRecipes();
 
     /**
      * TODO: Search Recipes Function
