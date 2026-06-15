@@ -76,6 +76,22 @@ window.addEventListener("DOMContentLoaded", () => {
      */
     async function searchRecipes() {
         // Implement search logic here
+        const searchTerm = searchInput.value.trim();
+        if(!searchTerm)
+        {
+            getRecipes();
+            return;
+        }
+        try
+        {
+            const respone = await fetch("/recipes?name${searchTerm}",
+                method: "GET", header: {"Authorization": "Bearer " + sessionStorage.getItem("auth-token")});
+            
+        }
+        catch (error)
+        {
+
+        }
     }
 
     /**
