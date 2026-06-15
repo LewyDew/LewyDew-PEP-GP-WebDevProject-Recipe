@@ -84,8 +84,8 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         try
         {
-            const respone = await fetch('/recipes?name${searchTerm}',
-                method: "GET", header: {"Authorization": "Bearer " + sessionStorage.getItem("auth-token")});
+            const respone = await fetch('/recipes?name${searchTerm}',{
+                method: "GET", header: {"Authorization": "Bearer " + sessionStorage.getItem("auth-token")}});
             if(respone.ok)
                 {
                     const filterRecipes = await respone.json();
