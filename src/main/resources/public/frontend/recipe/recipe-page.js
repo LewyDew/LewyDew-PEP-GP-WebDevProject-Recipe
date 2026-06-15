@@ -312,15 +312,20 @@ window.addEventListener("DOMContentLoaded", () => {
                     "Authorization": "Bearer " + sessionStorage.getItem("auth-token")
                 }
             });
-        }
         if(response.ok)
             {
                 sessionStorage.clear();
-                window.location.href = "/login/login-page.html";
+                window.location.href = "../login/login-page.html";
             }
             else{
                 alert("Failed  to fetch recies. Status: " + response.status);
+                sessionStorage.clear();
+                window.location.href = "../login/login-page.html";
             }
+        }
+        catch(error)
+        {
+            console.error("Error during logout: ", error);
         }
     }
 

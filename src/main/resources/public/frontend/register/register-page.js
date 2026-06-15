@@ -85,7 +85,7 @@ async function processRegistration() {
         if(respone.status === 201)
         {
             alert("Succesfully registered");
-            window.location.href = "/recipe/recipe-page.html"
+            window.location.href = "../recipe/recipe-page.html"
         }
         else if(respone.status === 409)
         {
