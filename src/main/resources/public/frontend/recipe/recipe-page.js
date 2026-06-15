@@ -16,7 +16,23 @@ window.addEventListener("DOMContentLoaded", () => {
      * - Admin link and logout button
      * - Search input
     */
+    const adminLink = document.getElementById("admin-link");
+    const searchInput = document.getElementById("search-input");
+    const searchButton = document.getElementById("search-button");
 
+    const addRecipeNameInput = document.getElementById("add-recipe-name-input");
+    const addRecipeInstructionsText = document.getElementById("add-recipe-instructions-input");
+    const addRecipeSubmitButton = document.getElementById("add-recipe-submit-input");
+
+    const updateRecipeNameInput = document.getElementById("update-recipe-name-input");
+    const updateRecipeInstructionsText = document.getElementById("update-recipe-instructions-input");
+    const updateRecipeButton = document.getElementById("update-recipe-submit-input");
+
+    const deleteRecipeNameInput = document.getElementById("delete-recipe-name-input");
+    const deleteRecipeNameButton = document.getElementById("delete-recipe-submit-input");
+
+    const recipeListContainer = document.getElementById("recipe-list");
+    const logoutButton = document.getElementById("logout-button");
     /*
      * TODO: Show logout button if auth-token exists in sessionStorage
      */
