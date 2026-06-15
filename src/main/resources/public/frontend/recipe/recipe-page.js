@@ -86,11 +86,20 @@ window.addEventListener("DOMContentLoaded", () => {
         {
             const respone = await fetch("/recipes?name${searchTerm}",
                 method: "GET", header: {"Authorization": "Bearer " + sessionStorage.getItem("auth-token")});
-            
+            if(respone.ok)
+                {
+                    const filterRecipes = await respone.json();
+                    refreshRecipeList(filterRecipes);
+                }
+            else
+            {
+                allert("Failed to fetch matching recipes. status: " + respone.status);
+            }    
         }
         catch (error)
         {
-
+            console.error("Error during recipe search: ", error);
+            alert("A network erorr occured wile searching recipes.");
         }
     }
 
@@ -104,6 +113,13 @@ window.addEventListener("DOMContentLoaded", () => {
      */
     async function addRecipe() {
         // Implement add logic here
+        const rescipeName = addRecipeNameInput.value.trim();
+        const instructions = addRecipeInstructionsText.value.trim();
+
+        if(!name || !instructions)
+        {
+            alert("")
+        }
     }
 
     /**
