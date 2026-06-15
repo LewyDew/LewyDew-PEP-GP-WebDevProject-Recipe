@@ -84,7 +84,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         try
         {
-            const respone = await fetch('/recipes?name${searchTerm}',{
+            const respone = await fetch('${BASE_URL}/recipes?name${searchTerm}',{
                 method: "GET", header: {"Authorization": "Bearer " + sessionStorage.getItem("auth-token")}});
             if(respone.ok)
                 {
@@ -123,7 +123,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         const recipeBody = {recipeName, instructions};
         try {
-            const response = await fetch('/recipes', {
+            const response = await fetch('${BASE_URL}/recipes', {
                 method: "POST",
                 headrs: {
                     "Content-Type": "application/json",
@@ -174,7 +174,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         const updateBody = {instructions};
         try {
-            const response = await fetch('/recipes/${targetRecipe.id}', {
+            const response = await fetch('${BASE_URL}/recipes/${targetRecipe.id}', {
                 method: "PUT",
                 headrs: {
                     "Content-Type": "application/json",
@@ -223,7 +223,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
 
         try {
-            const response = await fetch('/recipes/${targetRecipe.id}', {
+            const response = await fetch('${BASE_URL}/recipes/${targetRecipe.id}', {
                 method: "DELETE",
                 headrs: {
                     "Content-Type": "application/json",
@@ -256,7 +256,7 @@ window.addEventListener("DOMContentLoaded", () => {
     async function getRecipes() {
         // Implement get logic here
         try {
-            const response = await fetch('/recipes', {
+            const response = await fetch('${BASE_URL}/recipes', {
                 method: "GET",
                 headers:{
                     "Authorization": "Bearer " + sessionStorage.getItem("auth-token")

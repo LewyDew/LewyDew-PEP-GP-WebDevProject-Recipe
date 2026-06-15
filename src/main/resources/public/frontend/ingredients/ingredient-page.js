@@ -53,6 +53,12 @@ async function addIngredient() {
  * - Call refreshIngredientList() to display them
  * - On error: alert the user
  */
+const addIngredientNameInput = document.getElementById("add-ingredient-name-input");
+const deleteIngredientNameInput = document.getElementById("delete-ingredient-name-input");
+const ingredientListContainer = document.getElementById("ingredient-list");
+
+const addSubmitButton = document.getElementById("add-ingredient-submit-button");
+const deleteSubmitButton = document.getElementById("delete-ingredient-submit-button");
 async function getIngredients() {
     // Implement get ingredients logic here
 }
@@ -69,6 +75,8 @@ async function getIngredients() {
  * - On success: call getIngredients() and refreshIngredientList(), clear input
  * - On failure or not found: alert the user
  */
+
+
 async function deleteIngredient() {
     // Implement delete ingredient logic here
 }

@@ -81,7 +81,7 @@ async function processRegistration() {
 
     try
     {
-        const respone = await fetch('/register',requestOptions);
+        const respone = await fetch('${BASE_URL}/register',requestOptions);
         if(respone.status === 201)
         {
             alert("Succesfully registered");
