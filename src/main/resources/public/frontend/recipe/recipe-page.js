@@ -289,7 +289,11 @@ window.addEventListener("DOMContentLoaded", () => {
         if(!recipeListContainer) return;
         recipeListContainer.innerHTML = "";
 
-        listToDisplay
+        listToDisplay.forEach(recipe => {
+            const li = document.createElement("li");
+            li.textContent = '${recipe.name || "Unnamed Recipe"} ${recipe.instructions || "No instructions present."}';
+            recipeListContainer.appendChild(li);
+        });
     }
 
     /**
@@ -301,6 +305,23 @@ window.addEventListener("DOMContentLoaded", () => {
      */
     async function processLogout() {
         // Implement logout logic here
+        try{
+            const response = await fetch('/logout', {
+                method: "POST",
+                headers: {
+                    "Authorization": "Bearer " + sessionStorage.getItem("auth-token")
+                }
+            });
+        }
+        if(response.ok)
+            {
+                sessionStorage.clear();
+                window.location.href = "/login/login-page.html";
+            }
+            else{
+                alert("Failed  to fetch recies. Status: " + response.status);
+            }
+        }
     }
 
 });
