@@ -256,7 +256,25 @@ window.addEventListener("DOMContentLoaded", () => {
     async function getRecipes() {
         // Implement get logic here
         try {
-            const response = await fetch('/recipes')
+            const response = await fetch('/recipes', {
+                method: "GET",
+                headers:{
+                    "Authorization": "Bearer " + sessionStorage.getItem("auth-token")
+                }
+            });
+            if(response.ok)
+            {
+                recipes = await response.json();
+                refreshRecipeList(recipes);
+            }
+            else{
+                alert("Failed  to fetch recies. Status: " + response.status);
+            }
+        }
+        catch (erorr)
+        {
+            console.error("Error gettting recipes:", error);
+            alert("An error occured whil getting recipes");
         }
     }
 
@@ -268,6 +286,10 @@ window.addEventListener("DOMContentLoaded", () => {
      */
     function refreshRecipeList() {
         // Implement refresh logic here
+        if(!recipeListContainer) return;
+        recipeListContainer.innerHTML = "";
+
+        listToDisplay
     }
 
     /**
