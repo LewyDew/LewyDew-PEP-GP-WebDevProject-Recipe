@@ -1,6 +1,6 @@
 /**
- * While workin on this project the tests seemed to be bugged. When I ran the tests with just one html page done I got a higher score than
- * when running with all my js done. I also would get inconsisten scores, sometime passing 6-ish other times passing 111.
+ * While working on this project the tests seemed to be bugged. When I ran the tests with just one html page done I got a higher score than
+ * when running with all my js done. I also would get inconsisten scores, sometime passing 76 other times passing 111.
  * I was not able to run the website on 8081 either so I was unable to verify anything and was coding in the dark.
  * This script defines the add, view, and delete operations for Ingredient objects in the Recipe Management Application.
  */
